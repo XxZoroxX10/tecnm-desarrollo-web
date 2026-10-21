@@ -41,6 +41,15 @@ La evaluación no premia “seguir instrucciones”: premia **alcanzar el result
 
 ---
 
+## 🧰 Antes de la sesión 01: Git y Codespaces
+
+Si es tu primera vez en el curso, empieza por la **sesión previa 00**: abrir tu Codespace, ejecutar tu primer script y publicar tu primer commit.
+
+- [Presentación: Git, Codespaces y primer commit](https://ijmarquezl.github.io/tecnm-desarrollo-web/presentaciones/lab00-git-codespaces.html)
+- [Guía del Laboratorio 00](https://github.com/ijmarquezl/tecnm-desarrollo-web/blob/main/laboratorios/lab00-git-codespaces.md)
+
+---
+
 ## 🏗️ Proyecto Integrador Semestral (30%)
 
 - **Hito 1 (Sesión 10):** Mock API RESTful con especificación OpenAPI y validation harness.
