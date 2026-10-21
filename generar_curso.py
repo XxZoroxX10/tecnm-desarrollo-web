@@ -1189,7 +1189,8 @@ def leerme(sesiones: dict[int, dict]) -> str:
 
 Repositorio oficial y entorno de laboratorio interactivo del curso de **Desarrollo de Aplicaciones Web** del Tecnológico Nacional de México / Instituto Tecnológico de Cancún.
 
-**Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)
+**Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
+**Sitio del curso:** [ijmarquezl.github.io/tecnm-desarrollo-web]({SITIO}/)
 
 ---
 
@@ -1302,6 +1303,94 @@ python3 generar_curso.py --solo 2
 """
 
 
+def portada_sitio(sesiones: dict[int, dict]) -> str:
+    bloques = [
+        ("Bloque 1", "Arquitectura web, HTTP y REST APIs", range(1, 11)),
+        ("Bloque 2", "Lógica de negocio y autenticación segura", range(11, 21)),
+        ("Bloque 3", "Persistencia relacional y OWASP", range(21, 31)),
+        ("Bloque 4", "Despliegue, SPA y pruebas E2E", range(31, 41)),
+    ]
+    tarjetas = []
+    for bloque, descripcion, numeros in bloques:
+        sesiones_html = []
+        for numero in numeros:
+            datos = sesiones[numero]
+            n = f"{numero:02d}"
+            sesiones_html.append(
+                f'<a class="session" href="presentaciones/sesion{n}.html">'
+                f'<span class="num">{n}</span>'
+                f'<span class="session-body"><strong>{e(datos["tema"])}</strong>'
+                f'<small>{e(datos["pregunta"])}</small></span></a>'
+            )
+        tarjetas.append(
+            f'<section class="block"><div class="block-head"><span class="kicker">{bloque}</span>'
+            f'<h2>{e(descripcion)}</h2></div><div class="sessions">{"".join(sesiones_html)}</div></section>'
+        )
+
+    return f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollo de Aplicaciones Web (DAB-2201) | TecNM Cancún</title>
+  <style>
+    :root {{
+      --bg: #f3f7fb; --card: #ffffff; --border: #d3dfea; --accent: #0969da;
+      --text: #334155; --bright: #0f172a; --muted: #5b6b7c;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }}
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{ background: radial-gradient(1000px 500px at 10% -10%, #e3f0fb, transparent 60%), var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.5; }}
+    .wrap {{ max-width: 1180px; margin: 0 auto; padding: 0 22px; }}
+    header {{ border-bottom: 1px solid var(--border); background: rgba(255,255,255,.85); backdrop-filter: blur(10px); }}
+    header .wrap {{ display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-top: 14px; padding-bottom: 14px; }}
+    .brand {{ font-weight: 800; color: var(--bright); }}
+    .brand span {{ color: var(--accent); }}
+    .hero {{ padding: 64px 0 34px; }}
+    .kicker {{ display: inline-block; background: #ddf4ff; color: var(--accent); border: 1px solid #b6e3ff; border-radius: 999px; padding: 5px 12px; font-family: var(--mono); font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }}
+    h1 {{ font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; color: var(--bright); margin: 14px 0 12px; letter-spacing: -.03em; }}
+    .lead {{ font-size: 1.08rem; color: #475569; max-width: 820px; }}
+    .buttons {{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }}
+    .btn {{ display: inline-flex; align-items: center; gap: 7px; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border); background: #fff; color: var(--bright); text-decoration: none; font-weight: 700; font-size: .88rem; }}
+    .btn.primary {{ background: var(--accent); border-color: var(--accent); color: #fff; }}
+    .block {{ padding: 26px 0 8px; }}
+    .block-head h2 {{ font-size: 1.35rem; color: var(--bright); margin-top: 6px; }}
+    .sessions {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-top: 14px; }}
+    .session {{ display: flex; gap: 11px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 13px; text-decoration: none; color: inherit; transition: border-color .2s, transform .2s, box-shadow .2s; }}
+    .session:hover {{ border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9,105,218,.10); }}
+    .num {{ flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: #ddf4ff; color: var(--accent); font-family: var(--mono); font-weight: 800; font-size: .78rem; }}
+    .session-body {{ display: flex; flex-direction: column; gap: 3px; }}
+    .session-body strong {{ color: var(--bright); font-size: .9rem; line-height: 1.3; }}
+    .session-body small {{ color: var(--muted); font-size: .78rem; line-height: 1.35; }}
+    .note {{ margin: 24px 0 10px; padding: 14px 16px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; font-size: .88rem; }}
+    footer {{ margin-top: 42px; border-top: 1px solid var(--border); padding: 24px 0 40px; font-size: .82rem; color: var(--muted); }}
+    code {{ font-family: var(--mono); background: #eef4fa; padding: 1px 5px; border-radius: 4px; }}
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><div class="brand">TecNM Cancún <span>·</span> DAB-2201</div>
+    <div class="kicker">Curso 2026</div></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <span class="kicker">Desarrollo de Aplicaciones Web</span>
+      <h1>Construye, verifica y despliega APIs reales.</h1>
+      <p class="lead">40 sesiones con presentaciones claras, conceptos desde cero y laboratorios de <strong>resultado primero</strong>: ves exactamente qué debe producir tu API y un verificador te dice qué falta. Sin pasos intermedios.</p>
+      <div class="buttons">
+        <a class="btn primary" href="presentaciones/lab00-git-codespaces.html">Empezar con Git y Codespaces &rarr;</a>
+        <a class="btn" href="presentaciones/sesion01.html">Ver la Sesión 01</a>
+        <a class="btn" href="https://github.com/ijmarquezl/tecnm-desarrollo-web">Repositorio en GitHub</a>
+      </div>
+    </section>
+    <div class="note"><strong>Antes de la sesión 01:</strong> abre tu fork, ejecuta tu primer script y publica tu primer commit. La guía está en <a href="https://github.com/ijmarquezl/tecnm-desarrollo-web/blob/main/laboratorios/lab00-git-codespaces.md">Laboratorio 00</a>.</div>
+    {"".join(tarjetas)}
+    <footer>MCC. Iván Márquez Larios (<code>ijmarquezl</code>) · Tecnológico Nacional de México — Campus Cancún<br>
+      El contenido se genera desde <code>datos_sesiones_b*.py</code> con <code>python3 generar_curso.py</code>.</footer>
+  </main>
+</body>
+</html>
+"""
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Genera el curso completo de Desarrollo Web")
     parser.add_argument("--solo", nargs="*", type=int, default=None, help="Sesiones específicas a generar")
@@ -1336,6 +1425,9 @@ def main() -> None:
             bitacora(numero, datos), encoding="utf-8"
         )
         print(f"✅ Sesión {n}: presentación, cuaderno y bitácora")
+
+    (RAIZ / "index.html").write_text(portada_sitio(sesiones), encoding="utf-8")
+    print("✅ Portada del sitio (index.html)")
 
     if not args.sin_readme:
         (RAIZ / "README.md").write_text(leerme(sesiones), encoding="utf-8")

@@ -2,7 +2,8 @@
 
 Repositorio oficial y entorno de laboratorio interactivo del curso de **Desarrollo de Aplicaciones Web** del Tecnológico Nacional de México / Instituto Tecnológico de Cancún.
 
-**Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)
+**Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
+**Sitio del curso:** [ijmarquezl.github.io/tecnm-desarrollo-web](https://ijmarquezl.github.io/tecnm-desarrollo-web/)
 
 ---
 
