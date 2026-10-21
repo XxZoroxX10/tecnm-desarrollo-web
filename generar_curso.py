@@ -39,6 +39,12 @@ from datos_sesiones_b4 import BLOQUE_4
 RAIZ = Path(__file__).resolve().parent
 REPO = "https://github.com/ijmarquezl/tecnm-desarrollo-web"
 SITIO = "https://ijmarquezl.github.io/tecnm-desarrollo-web"
+# Commit inmutable que contiene laboratorios/verificar.py. Los cuadernos
+# descargan el motor desde ahí para que todos usen exactamente la misma
+# versión, incluso si `main` avanza. Al cambiar el motor, actualiza este hash
+# y regenera con `python3 generar_curso.py`.
+VERIFICADOR_COMMIT = "c275993ba69ef2a8cf650b2f127b55c8356279d7"
+VERIFICADOR_URL = f"https://raw.githubusercontent.com/ijmarquezl/tecnm-desarrollo-web/{VERIFICADOR_COMMIT}/laboratorios/verificar.py"
 
 ENRIQUECIMIENTO = {**BLOQUE_1, **BLOQUE_2, **BLOQUE_3, **BLOQUE_4}
 
@@ -1013,10 +1019,10 @@ Ejecuta esta celda una sola vez. Instala las herramientas del track **Python / F
     )
     celdas.append(
         celda_codigo(
-            """import os, sys
+            f"""import os, sys
 print("⏳ Preparando el entorno de Desarrollo Web...")
 !pip install -q fastapi uvicorn httpx pydantic "passlib[bcrypt]" bcrypt python-jose[cryptography] PyJWT "sqlalchemy[asyncio]" greenlet aiosqlite alembic python-multipart
-!wget -q -O verificar.py https://raw.githubusercontent.com/ijmarquezl/tecnm-desarrollo-web/main/laboratorios/verificar.py
+!wget -q -O verificar.py {VERIFICADOR_URL}
 if not os.path.exists("verificar.py") or os.path.getsize("verificar.py") < 1000:
     raise RuntimeError("No se pudo descargar verificar.py. Revisa tu conexión o abre el cuaderno desde el repositorio del curso.")
 print("✅ Entorno listo")
@@ -1273,7 +1279,7 @@ El contenido se genera desde una sola fuente de verdad:
 - `datos_teoria.py`: teoría de las 40 sesiones.
 - `datos_sesiones_b1.py` … `datos_sesiones_b4.py`: objetivos, conceptos, resultado final, reto y casos de verificación.
 - `generar_curso.py`: regenera las 40 presentaciones, los 40 cuadernos, las 40 bitácoras y este README.
-- `laboratorios/verificar.py`: motor compartido que descargan los cuadernos.
+- `laboratorios/verificar.py`: motor compartido que descargan los cuadernos desde el commit fijado en `VERIFICADOR_COMMIT`.
 
 Para regenerar todo:
 

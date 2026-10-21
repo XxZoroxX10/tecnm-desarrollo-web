@@ -125,7 +125,7 @@ El contenido se genera desde una sola fuente de verdad:
 - `datos_teoria.py`: teoría de las 40 sesiones.
 - `datos_sesiones_b1.py` … `datos_sesiones_b4.py`: objetivos, conceptos, resultado final, reto y casos de verificación.
 - `generar_curso.py`: regenera las 40 presentaciones, los 40 cuadernos, las 40 bitácoras y este README.
-- `laboratorios/verificar.py`: motor compartido que descargan los cuadernos.
+- `laboratorios/verificar.py`: motor compartido que descargan los cuadernos desde el commit fijado en `VERIFICADOR_COMMIT`.
 
 Para regenerar todo:
 
