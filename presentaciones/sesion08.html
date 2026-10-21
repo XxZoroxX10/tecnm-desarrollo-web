@@ -413,7 +413,7 @@ HTTP/1.1 500 Internal Server Error
         </div>
         <div class="criteria-card">
           <h3>Lo que debe cumplirse</h3>
-          <ul><li>Define <code>LibroNoEncontrado</code> y regístralo con un handler que responda 404.</li><li>El cuerpo del 404 es {&quot;error&quot;: {&quot;codigo&quot;: &quot;NO_ENCONTRADO&quot;, &quot;mensaje&quot;: ...}}.</li><li>Los errores de validación responden 422 con el mismo sobre y codigo VALIDACION.</li><li>La API inicia con el libro 1 (Rayuela) para que el caso feliz exista.</li><li>GET /api/libros/1 responde 200; GET /api/libros/99 responde 404.</li><li>Ningún caso debe producir 500.</li></ul>
+          <ul><li>Define <code>LibroNoEncontrado</code> y regístralo con un handler que responda 404.</li><li>El cuerpo del 404 es {&quot;error&quot;: {&quot;codigo&quot;: &quot;NO_ENCONTRADO&quot;, &quot;mensaje&quot;: ...}}.</li><li>Los errores de validación responden 422 con el mismo sobre y codigo VALIDACION.</li><li>Un título vacío debe rechazarse con 422.</li><li>La API inicia con el libro 1 (Rayuela) para que el caso feliz exista.</li><li>GET /api/libros/1 responde 200; GET /api/libros/99 responde 404.</li><li>Ningún caso debe producir 500.</li></ul>
           <div class="callout green" style="margin-top:10px;"><strong>4 casos</strong> en el verificador. Sin pasos intermedios: tú decides la estructura.</div>
           <div class="small" style="margin-top:8px;">El cliente necesita saber qué corregir; tú necesitas que no se filtre la implementación.</div>
         </div>

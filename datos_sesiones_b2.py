@@ -317,7 +317,7 @@ HTTP/1.1 401 Unauthorized""",
                         "ruta": "/api/login",
                         "json": {"usuario": "ana", "password": "secreta"},
                         "estado": 200,
-                        "headers_contiene": {"set-cookie": "httponly"},
+                        "headers_contiene": {"set-cookie": ["httponly", "samesite"]},
                     },
                     {
                         "descripcion": "El perfil se obtiene con la cookie",

@@ -866,6 +866,7 @@ HTTP/1.1 500 Internal Server Error
                 "Define `LibroNoEncontrado` y regístralo con un handler que responda 404.",
                 "El cuerpo del 404 es {\"error\": {\"codigo\": \"NO_ENCONTRADO\", \"mensaje\": ...}}.",
                 "Los errores de validación responden 422 con el mismo sobre y codigo VALIDACION.",
+                "Un título vacío debe rechazarse con 422.",
                 "La API inicia con el libro 1 (Rayuela) para que el caso feliz exista.",
                 "GET /api/libros/1 responde 200; GET /api/libros/99 responde 404.",
                 "Ningún caso debe producir 500.",

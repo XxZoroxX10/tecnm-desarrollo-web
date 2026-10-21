@@ -234,8 +234,11 @@ def probar_http(
             real = respuesta.headers.get(clave)
             if real is None:
                 errores.append(f"falta el encabezado «{clave}»")
-            elif str(valor).lower() not in str(real).lower():
-                errores.append(f"encabezado «{clave}»: {real!r} no contiene {valor!r}")
+                continue
+            valores = valor if isinstance(valor, (list, tuple)) else [valor]
+            for esperado in valores:
+                if str(esperado).lower() not in str(real).lower():
+                    errores.append(f"encabezado «{clave}»: {real!r} no contiene {esperado!r}")
 
         for clave, valor in caso.get("headers_no_contiene", {}).items():
             real = respuesta.headers.get(clave)
