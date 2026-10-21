@@ -1,54 +1,70 @@
-# Bitácora de Requerimientos y Auditoría IA — Sesión 30
+# Bitácora de la Sesión 30 — Hito 3: API Persistente con ORM, Migraciones y Blindaje OWASP
+
 **Materia:** Desarrollo de Aplicaciones Web (DAB-2201)  
-**Tema:** Hito 3: API Persistente con ORM, Migraciones y Blindaje OWASP  
 **Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
-**Estudiante:** [Nombre Completo]  
-**Matrícula:** [No. de Control]  
-**Track:** [ Python/FastAPI | PHP 8+ ]  
+**Estudiante:** [Nombre completo]  
+**Matrícula:** [Número de control]  
+**Track:** [Python/FastAPI | PHP 8+]  
+**Fecha:** [DD/MM/AAAA]
 
 ---
 
-## 1. Fase 1: El Artesano (Dificultad Manual)
-*Reto:* Integración de capa de datos persistente y seguridad  
-*Describe qué dificultad encontraste al procesar la petición HTTP o validar campos a mano:*
-> 
+## 1. Resultado al que llegué
 
----
+**Resultado esperado:** Tu Hito 3 completo se verá así
 
-## 2. Fase 2: El Científico (Ingeniería de Requerimientos C-R-E-O)
+> Pega aquí la salida de la celda de verificación (los casos en verde) o describe exactamente qué obtuviste.
 
-### 2.1 Matriz de Especificación Formal (Contrato OpenAPI / DTO)
-| Elemento C-R-E-O | Definición Técnica |
-| :--- | :--- |
-| **Contexto (C)** | FastAPI 0.110+ (Python 3.10+) o PHP 8.2 con servidor embebido |
-| **Rol (R)** | Arquitecto de software senior especialista en APIs RESTful y Seguridad Web |
-| **Especificación (E)** | Contrato completo de API transaccional auditada |
-| **Output (O)** | Solo código modular, esquemas Pydantic/DTO y códigos HTTP semánticos |
-
-### 2.2 Prompt Estructurado
 ```text
-[Pega aquí el prompt formal que redactaste para la IA]
+[Pega aquí la salida de la verificación]
 ```
 
----
+## 2. Criterios de aceptación
 
-## 3. Código Devuelto por el Modelo
-```python
-# Código devuelto por el LLM
+- [ ] Crear un libro persistente → HTTP 201
+- [ ] Listar los libros persistidos → HTTP 200
+- [ ] La búsqueda resiste inyección → HTTP 200
+- [ ] CORS autoriza el origen permitido → HTTP 200
+- [ ] El healthcheck responde → HTTP 200
+- [ ] Hay persistencia real
+- [ ] CORS está configurado
+
+## 3. Mi contrato C-R-E-O
+
+| Elemento | Definición |
+| :--- | :--- |
+| **Contexto** | [Framework, versión, entorno] |
+| **Rol** | [Papel técnico que asumió la IA] |
+| **Especificación** | [Rutas, entradas, salidas, validaciones y códigos HTTP] |
+| **Output** | [Formato exacto solicitado] |
+
+### Prompt que utilicé
+
+```text
+[Pega aquí tu prompt]
 ```
 
----
+## 4. Decisiones de diseño
 
-## 4. Fase 3: El Auditor (Resultados del Test Harness HTTP)
-*Pruebas ejecutadas:* Batería de pruebas de penetración y estrés de datos
+- ¿Qué estructura elegiste y por qué?
+- ¿Qué validaste en el borde de la API y qué dejaste a la lógica de negocio?
+- ¿Qué cambiarías si mañana otro equipo consumiera tu API?
 
-* [ ] Respuestas semánticas correctas (`200 OK`, `201 Created`, `400 Bad Request`, `422 Unprocessable`).
-* [ ] No existen respuestas HTTP `500 Internal Server Error` no capturadas.
-* [ ] Encabezados `Content-Type: application/json` correctamente configurados.
-
-### Reporte Crítico
-*¿Qué código de estado HTTP o falla de seguridad omitió la IA y cómo lo corregiste?*
 > 
+
+## 5. Errores, hallazgos y correcciones
+
+- ¿Qué caso de la verificación falló primero?
+- ¿Qué aprendiste al corregirlo?
+- ¿Qué harías distinto la próxima vez?
+
+> 
+
+## 6. Evidencia
+
+- **Commit:** [enlace al commit]
+- **Cuaderno ejecutado:** [enlace al cuaderno en tu fork]
+- **Presentación:** https://ijmarquezl.github.io/tecnm-desarrollo-web/presentaciones/sesion30.html
 
 ---
 **Firma digital:** [Usuario de GitHub]
