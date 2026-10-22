@@ -9,6 +9,7 @@ Repositorio oficial y entorno de laboratorio interactivo del curso de **Desarrol
 
 ## 🚀 Flujo de trabajo en la nube (100% en navegador)
 
+
 1. Realiza un **fork** de este repositorio a tu cuenta personal de GitHub.
 2. Identifícate editando este `README.md` con tu nombre, matrícula y track.
 3. Abre la sesión con el botón **Open in Colab**.
