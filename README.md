@@ -5,6 +5,15 @@ Repositorio oficial y entorno de laboratorio interactivo del curso de **Desarrol
 **Docente Titular:** MCC. Iván Márquez Larios (`ijmarquezl`)  
 **Sitio del curso:** [ijmarquezl.github.io/tecnm-desarrollo-web](https://ijmarquezl.github.io/tecnm-desarrollo-web/)
 
+## 👤 Identificación del estudiante
+
+| Campo | Dato |
+| :--- | :--- |
+| **Nombre** | Pedro Pablo Pool Ché |
+| **Matrícula** | 23531067 |
+| **Track** | Python/FastAPI |
+| **GitHub** | [`XxZoroxX10`](https://github.com/XxZoroxX10) |
+
 ---
 
 ## 🚀 Flujo de trabajo en la nube (100% en navegador)
