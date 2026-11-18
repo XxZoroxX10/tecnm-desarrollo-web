@@ -90,5 +90,11 @@ Output: solo app.py.
 - **Cuaderno ejecutado:** https://github.com/XxZoroxX10/tecnm-desarrollo-web/blob/main/laboratorios/sesion04/sesion04_laboratorio.ipynb
 - **Presentación:** https://ijmarquezl.github.io/tecnm-desarrollo-web/presentaciones/sesion04.html
 
+## 7. Avance del Proyecto Integrador (entregable de la sesión 4: propuesta)
+
+- **Propuesta:** [docs/propuesta.md](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb/blob/main/docs/propuesta.md): equipo, entidades (Tablero → Tarea adaptado a reportes ciudadanos), 10 endpoints, reglas de negocio, riesgos y plan por hito.
+- **Acuerdo de equipo:** [docs/equipo.md](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb/blob/main/docs/equipo.md).
+- **Cómo se conecta con esta sesión:** las rutas del proyecto siguen la misma jerarquía de recursos del laboratorio: el padre en la ruta (`/api/tableros/{id}/tareas`) y los filtros en la consulta (`?estado=pendiente`, planeado para el Hito 3).
+
 ---
 **Firma digital:** `XxZoroxX10`
