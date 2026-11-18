@@ -105,5 +105,14 @@ Devuelve solo app.py organizado por secciones.
 - **Cuaderno ejecutado:** https://github.com/XxZoroxX10/tecnm-desarrollo-web/blob/main/laboratorios/sesion10/sesion10_laboratorio.ipynb
 - **Presentación:** https://ijmarquezl.github.io/tecnm-desarrollo-web/presentaciones/sesion10.html
 
+## 7. Avance del Proyecto Integrador (Hito 1)
+
+- **Repositorio:** [Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb).
+- **Correcciones al contrato:** commit [`362b1ca`](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb/commit/362b1ca): `DELETE` → 204 sin cuerpo, listados envueltos (`{"tableros": [...]}`) y 405 con el encabezado `Allow`.
+- **8 pruebas del Hito 1 (pytest, 8/8 en verde):** commit [`52ab229`](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb/commit/52ab229).
+- **Decisiones del Hito 1:** [docs/decisiones.md](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb/blob/main/docs/decisiones.md).
+- **Cómo se conecta con esta sesión:** apliqué al proyecto lo mismo que este laboratorio: sobre de error uniforme, 204 en `DELETE` y conservar `Allow` en el 405.
+- **Pendiente:** tag `v0.1-hito1`.
+
 ---
 **Firma digital:** `XxZoroxX10`
