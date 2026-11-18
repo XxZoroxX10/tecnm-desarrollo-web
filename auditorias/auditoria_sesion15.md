@@ -96,5 +96,10 @@ Devuelve solo app.py.
 - **Cuaderno ejecutado:** https://github.com/XxZoroxX10/tecnm-desarrollo-web/blob/main/laboratorios/sesion15/sesion15_laboratorio.ipynb
 - **Presentación:** https://ijmarquezl.github.io/tecnm-desarrollo-web/presentaciones/sesion15.html
 
+## 7. Avance del Proyecto Integrador (Checkpoint 1)
+
+- **Checkpoint 1:** [docs/checkpoint-01.md](https://github.com/XxZoroxX10/Proyecto-Integrador_ReporteCiudadano_DesarrolloWeb/blob/main/docs/checkpoint-01.md): hecho, siguiente, bloqueo, guion de demo y evidencia de las 8 pruebas.
+- **Cómo se conecta con esta sesión:** el JWT de este laboratorio (`sub`, `exp`, HS256, clave en variable de entorno, 401 ante token alterado) es la base del Hito 2 del proyecto, al que se le agregará el claim `rol` para `user`/`admin`.
+
 ---
 **Firma digital:** `XxZoroxX10`
